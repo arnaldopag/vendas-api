@@ -25,7 +25,7 @@ public class Produto {
     @Column(nullable = false,length = 255)
     private String codigo;
 
-    @Column(precision = 2, scale = 16)
+    @Column(precision = 16, scale = 2)
     private BigDecimal preco;
 
     @Override
