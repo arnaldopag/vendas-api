@@ -1,33 +1,39 @@
 package com.example.vendasapi.rest.produtos;
 
+import com.example.vendasapi.model.Produto;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.NoArgsConstructor;
+
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
-@Data
-@Entity
+
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProdutoFormRequest {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
         private Long id;
-
-        @Column(nullable = false, length = 255)
         private String descricao;
-
-        @Column(nullable = false, length = 255)
         private String nome;
-
-        @Column
         private BigDecimal preco;
-
-        @Column(nullable = false, length = 255)
         private String codigo;
+        @JsonFormat(pattern = "dd/MM/yyyy")
+        private LocalDate dataCadastro;
+        public Produto toModel(){
+                return new Produto(id, nome, descricao, codigo, preco,dataCadastro);
+        }
+        public static ProdutoFormRequest fromModel(Produto produto){
+                return new ProdutoFormRequest(
+                        produto.getId(),
+                        produto.getDescricao(),
+                        produto.getNome(),
+                        produto.getPreco(),
+                        produto.getCodigo(),
+                        produto.getDataCadatro()
+                );
+        }
 }
