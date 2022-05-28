@@ -31,6 +31,7 @@ public class Produto {
     private BigDecimal preco;
 
     @Column
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadatro;
 
     @PrePersist

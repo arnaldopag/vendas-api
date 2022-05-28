@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -23,7 +24,8 @@ public class ProdutoController {
     @PostMapping("/produtos")
     @CrossOrigin("*")
     @ResponseStatus(HttpStatus.CREATED)
-    public  ProdutoFormRequest salvar(@Valid @RequestBody ProdutoFormRequest produto){
-        return  repository.save(produto);
+    public  Produto salvar(@Valid @RequestBody Produto produto){
+        return repository.save(produto);
     }
+
 }

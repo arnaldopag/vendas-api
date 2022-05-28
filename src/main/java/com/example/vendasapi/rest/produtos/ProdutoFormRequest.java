@@ -21,12 +21,11 @@ public class ProdutoFormRequest {
         private String nome;
         private BigDecimal preco;
         private String codigo;
+
         @JsonFormat(pattern = "dd/MM/yyyy")
         private LocalDate dataCadastro;
-        public Produto toModel(){
-                return new Produto(id, nome, descricao, codigo, preco,dataCadastro);
-        }
-        public static ProdutoFormRequest fromModel(Produto produto){
+
+        public static ProdutoFormRequest fromModel(Produto produto) {
                 return new ProdutoFormRequest(
                         produto.getId(),
                         produto.getDescricao(),
