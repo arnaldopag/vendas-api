@@ -15,7 +15,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="vendas-api" />
+          <factory-entry name="vendas-api" value="1b0750ed-f6bc-452d-86a3-fd555d80f145" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -123,5 +123,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.20" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.9.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.h2database:h2:2.1.212" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" level="project" />
   </component>
 </module>
