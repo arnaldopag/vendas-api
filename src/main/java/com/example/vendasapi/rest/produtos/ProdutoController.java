@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
+
 public class ProdutoController {
     @Autowired
     private ProdutoRepository repository;
@@ -29,7 +30,8 @@ public class ProdutoController {
         return ResponseEntity.ok(repository.save(produto));
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
+    @CrossOrigin
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> update(@PathVariable long id, @Valid @RequestBody Produto produtoAtualizado){
         Optional<Produto> produtoExistente = repository.findById(id);
