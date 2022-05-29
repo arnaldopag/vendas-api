@@ -30,7 +30,7 @@ public class Produto {
     @Column
     private BigDecimal preco;
 
-    @Column
+    @Column(name = "data_cadastro")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadatro;
 
