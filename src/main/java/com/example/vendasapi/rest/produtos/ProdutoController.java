@@ -38,6 +38,7 @@ public class ProdutoController {
         return ResponseEntity.ok().build();
     }
     @GetMapping
+    @CrossOrigin("*")
     public List<Produto> findAll(){
         return repository.findAll();
     }
