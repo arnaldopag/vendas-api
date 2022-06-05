@@ -39,7 +39,5 @@ public class ProdutoController {
     }
     @GetMapping
     @CrossOrigin("*")
-    public List<Produto> findAll(){
-        return repository.findAll();
-    }
+    public List<Produto> findAll() {return repository.findAll();}
 }
