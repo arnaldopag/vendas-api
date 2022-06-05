@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="70d761d0-75ed-41f2-b2b3-a89ee2e1bd8a" name="Changes" comment="criado metodo post">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/vendasapi/VendasApiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/vendasapi/VendasApiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/vendasapi/rest/produtos/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/vendasapi/rest/produtos/ProdutoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/vendasapi/rest/produtos/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/vendasapi/rest/produtos/ProdutoController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +104,9 @@
       <workItem from="1653833717072" duration="2389000" />
       <workItem from="1653858863715" duration="676000" />
       <workItem from="1653956156751" duration="2597000" />
-      <workItem from="1654124641039" duration="1447000" />
+      <workItem from="1654124641039" duration="1682000" />
+      <workItem from="1654451723276" duration="4424000" />
+      <workItem from="1654463066598" duration="4293000" />
     </task>
     <task id="LOCAL-00001" summary="criado metodo post">
       <created>1653784843059</created>
@@ -120,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653958412636</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="criado metodo post">
+      <created>1654128061284</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654128061284</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
