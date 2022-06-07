@@ -3,11 +3,9 @@ package com.example.vendasapi.rest.produtos;
 import com.example.vendasapi.model.Produto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

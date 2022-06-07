@@ -19,7 +19,6 @@ public class ProdutoController {
     private ProdutoRepository repository;
 
     @PostMapping
-
     @ResponseStatus(HttpStatus.CREATED)
     ResponseEntity<Produto> save(@Valid @RequestBody Produto produto) {
         return ResponseEntity.ok(repository.save(produto));
@@ -40,21 +39,19 @@ public class ProdutoController {
     public List<Produto> findAll() {return repository.findAll();}
 
     @GetMapping("{id}")
-    public ResponseEntity<Optional<Produto>> getById (@PathVariable Long id){
-        Optional<Produto> produto = repository.findById(id);
-        if(produto.isEmpty()){
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(produto);
+    public ResponseEntity<Produto> getById (@PathVariable Long id){
+        return repository
+                .findById(id)
+                .map( produto -> ResponseEntity.ok(produto))
+                .orElseGet(()-> ResponseEntity.notFound().build());
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar (@PathVariable long id){
-        Optional<Produto> produto = repository.findById(id);
-        if(produto.isEmpty()){
-            return ResponseEntity.notFound().build();
-        }
-        repository.delete(produto.get());
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<Object> deletar (@PathVariable long id){
+        return repository.findById(id)
+                .map( produto -> {
+                    repository.delete(produto);
+                   return ResponseEntity.noContent().build();
+                }).orElseGet(()-> ResponseEntity.notFound().build());
     }
 
 }
