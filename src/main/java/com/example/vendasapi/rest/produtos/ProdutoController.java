@@ -25,7 +25,6 @@ public class ProdutoController {
     }
 
     @PutMapping("{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> update(@PathVariable long id, @Valid @RequestBody Produto produtoAtualizado){
         Optional<Produto> produtoExistente = repository.findById(id);
         if(produtoExistente.isEmpty()) {

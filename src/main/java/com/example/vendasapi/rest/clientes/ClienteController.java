@@ -3,6 +3,7 @@ package com.example.vendasapi.rest.clientes;
 import com.example.vendasapi.model.Cliente;
 import com.example.vendasapi.model.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ public class ClienteController {
     private ClienteRepository repository;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Cliente> save(@Valid @RequestBody Cliente cliente){
         return ResponseEntity.ok(repository.save(cliente));
     }
@@ -34,7 +36,7 @@ public class ClienteController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping({"id"})
+    @GetMapping({"{id}"})
     public ResponseEntity<Cliente> getById(@PathVariable long id){
         return repository.findById(id)
                          .map(cliente -> ResponseEntity.ok(cliente))

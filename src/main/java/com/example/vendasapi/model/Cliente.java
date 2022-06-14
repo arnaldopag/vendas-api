@@ -18,23 +18,26 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(nullable = false)
+    @Column(name = "data_nascimento")
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate nascimento;
+    private LocalDate dataNascimento;
 
-    @Column(nullable = false)
+    @Column
     private String cpf;
 
-    @Column(nullable = false)
+    @Column
     private String nome;
 
-    @Column(nullable = false)
+    @Column
     private String endereco;
 
-    @Column(nullable = false)
+    @Column
     private String telefone;
 
-    @Column(name = "data_cadastro",nullable = false)
+    @Column(nullable = false)
+    private  String email;
+
+    @Column(name = "data_cadastro")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
 
