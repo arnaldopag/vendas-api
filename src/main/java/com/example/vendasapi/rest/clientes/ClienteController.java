@@ -3,6 +3,9 @@ package com.example.vendasapi.rest.clientes;
 import com.example.vendasapi.model.Cliente;
 import com.example.vendasapi.model.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -53,6 +56,11 @@ public class ClienteController {
         }).orElseGet(()-> ResponseEntity.notFound().build());
     }
     @GetMapping
-    public List<Cliente> getLista(){return repository.findAll();}
+    public Page<Cliente> getLista(
+            @RequestParam (value = "nome", required = false, defaultValue ="") String nome,
+
+            @RequestParam (value = "cpf", required = false, defaultValue = "") String cpf,
+              Pageable pagable
+    ){return repository.findoByCpfOrName("%" + nome,"%" + cpf,pagable);}
 
 }
