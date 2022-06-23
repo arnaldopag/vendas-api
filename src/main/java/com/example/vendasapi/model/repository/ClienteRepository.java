@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente,Long> {
-    @Query(" SELECT c FROM Cliente c where upper(c.nome) like :nome and c.cpf like :cpf")
+    @Query(" SELECT c FROM Cliente c where upper(c.nome) like upper(:nome) and c.cpf like :cpf")
     Page<Cliente> findoByCpfOrName(@Param("nome") String nome,
                                    @Param("cpf") String cpf, Pageable pageable);
 }

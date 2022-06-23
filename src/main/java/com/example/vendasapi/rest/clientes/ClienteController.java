@@ -61,6 +61,6 @@ public class ClienteController {
 
             @RequestParam (value = "cpf", required = false, defaultValue = "") String cpf,
               Pageable pagable
-    ){return repository.findoByCpfOrName("%" + nome,"%" + cpf,pagable);}
+    ){return repository.findoByCpfOrName("%" + nome + "%","%" + cpf + "%",pagable);}
 
 }
