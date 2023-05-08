@@ -28,7 +28,6 @@ public class ProdutoController {
         );
 
         repository.save(entidadeProduto);
-
         System.out.println(entidadeProduto);
         return produto;
     }
