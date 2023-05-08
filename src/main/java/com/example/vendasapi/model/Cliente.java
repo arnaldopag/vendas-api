@@ -6,36 +6,41 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Produto {
+public class Cliente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
+
+    @Column(name = "data_nascimento")
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataNascimento;
+
+    @Column
+    private String cpf;
 
     @Column
     private String nome;
 
     @Column
-    private String descricao;
+    private String endereco;
 
     @Column
-    private String codigo;
+    private String telefone;
 
-    @Column
-    private BigDecimal preco;
+    @Column(nullable = false)
+    private  String email;
 
     @Column(name = "data_cadastro")
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataCadatro;
+    private LocalDate dataCadastro;
 
     @PrePersist
-    public void prePersist(){
-        setDataCadatro(LocalDate.now());
-    }
+    public void prePersist(){setDataCadastro(LocalDate.now());}
 }
