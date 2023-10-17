@@ -27,7 +27,6 @@ public class ClienteController {
     public ResponseEntity<Cliente> save(@Valid @RequestBody Cliente cliente){
         return ResponseEntity.ok(repository.save(cliente));
     }
-
     @PutMapping("{id}")
     public ResponseEntity<Void> update (@PathVariable long id, @Valid @RequestBody Cliente cliente){
         Optional<Cliente> clienteEncontrado = repository.findById(id);
@@ -58,7 +57,6 @@ public class ClienteController {
     @GetMapping
     public Page<Cliente> getLista(
             @RequestParam (value = "nome", required = false, defaultValue ="") String nome,
-
             @RequestParam (value = "cpf", required = false, defaultValue = "") String cpf,
               Pageable pagable
     ){return repository.findoByCpfOrName("%" + nome + "%","%" + cpf + "%",pagable);}

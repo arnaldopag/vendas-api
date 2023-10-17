@@ -44,6 +44,7 @@ public class ProdutoController {
                 .map( produto -> ResponseEntity.ok(produto))
                 .orElseGet(()-> ResponseEntity.notFound().build());
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deletar (@PathVariable long id){
         return repository.findById(id)
